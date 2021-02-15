@@ -58,7 +58,7 @@
 						</ul>
 					</li>
 					<li>
-						프로그래밍 언어 외에도 각종 언어들을 좋아합니다. (사랑해요 듀오링고)
+						프로그래밍 언어 외에도 각종 언어들을 좋아합니다. (듀오링고 <span id="duolingo" style="text-decoration: underline;"></span>일차)
 						<ul>
 							<li>
 								일상 대화가 가능한 수준:
@@ -83,6 +83,12 @@
 			</p>
 		</section>
 	</content>
-	<script type="text/javascript" src="script/jquery-3.5.1.min.js" />
+	<!--<script type="text/javascript" src="script/jquery-3.5.1.min.js" />-->
+	<script>
+		var today = new Date();
+		var startDay = new Date("2020. 8. 14");
+		var duration = Math.ceil((today-startDay)/1000/60/60/24)
+		document.getElementById("duolingo").innerHTML = duration;
+	</script>
 </body>
 </html>
