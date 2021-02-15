@@ -40,6 +40,10 @@ section {
 	padding-bottom: 10px;
 }
 
+section ul li {
+	padding-bottom: 5px;
+}
+
 footer {
 	position: absolute;
 	bottom: 10px;
