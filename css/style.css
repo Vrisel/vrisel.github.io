@@ -12,7 +12,17 @@ header {
 	left: 0px;
 	height: 100%;
 	width: 100px;
-	background: #f5b335;
+	background: #bf66ec;
+	color: #f8ba2b;
+}
+
+header a {
+	color: #a3da58;
+}
+
+header a:hover {
+	color: #ff1e3c;
+	
 }
 
 nav ul {
@@ -50,4 +60,5 @@ footer {
 	width: 100%;
 	text-align: center;
 	font-size: 10px;
+	color: #fffc8c;
 }
