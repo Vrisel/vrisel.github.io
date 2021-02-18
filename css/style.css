@@ -12,12 +12,16 @@ header {
 	left: 0px;
 	height: 100%;
 	width: 100px;
-	background: #bf66ec;
+	background: #b066dd;
+}
+
+header h1 {
 	color: #f8ba2b;
+	
 }
 
 header a {
-	color: #a3da58;
+	color: #88ee66;
 }
 
 header a:hover {
