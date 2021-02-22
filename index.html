@@ -18,7 +18,7 @@
 				<li><a href="#home">Home</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#skills">Skills</a></li>
-				<li><a href="#tmi">TMI</a></li>
+				<li><a href="#tmi" onclick="open_details('tmi');">TMI</a></li>
 			</ul>
 		</nav>
 		<footer>
@@ -115,6 +115,19 @@
 		var startDay = new Date(2020, 8-1, 14);
 		var duration = Math.ceil((today.getTime()-startDay.getTime())/1000/60/60/24)
 		document.getElementById("duolingo").innerHTML = duration;
+	</script>
+	<script>
+		function open_details(id) {
+			var det = document.getElementById(id).getElementsByTagName('details')[0];
+			if (det.hasAttribute('open') != true) {
+				det.setAttribute('open', '');
+			}
+		}
+		document.addEventListener('DOMContentLoaded', function() {
+			if (location.hash == '#tmi') {
+				open_details('tmi');
+			}
+		});
 	</script>
 </body>
 </html>
