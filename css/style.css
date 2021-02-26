@@ -88,3 +88,8 @@ article li {
 .green-to-red:hover {
 	color: #ff1e3c;
 }
+
+.hashtag {
+	font-style: oblique;
+	font-weight: bold;
+}
