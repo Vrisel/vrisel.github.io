@@ -53,13 +53,16 @@
 			<h2 class="text-violet">Skills</h2>
 			<ul>
 				<li>
-					<strong>HTML, CSS</strong> 문법을 이해합니다.
+					<strong>Front</strong>: Vue, Nuxt
 				</li>
 				<li>
-					<strong>Python, C#, SQL, JavaScript, Java</strong> 등을 배우고 있습니다.
+					<strong>DB</strong>: SQL, MongoDB
 				</li>
 				<li>
-					<strong><abbr title="Model, View, Controller">MVC</abbr></strong> 구조를 배우고 있습니다.
+					<strong>Middleware</strong>: Express
+				</li>
+				<li>
+					<strong>Full-stack</strong>: C# ASP.NET Framwork
 				</li>
 			</ul>
 		</article>
@@ -67,8 +70,12 @@
 			<h2 class="text-violet">Projects</h2>
 			<ul>
 				<li>
-					<a href="https://github.com/Vrisel/LyricsToSlide">LyricsToSlide</a>:
-					가사 슬라이드를 쉽게 만들 수 있는 매크로 (Microsoft PowerPoint, 구역 기능이 있는 버전 이상에서 작동)
+					<a href="https://vrisel.github.io/mss_a11y">무신사 스토어 클론</a>:
+					무신사 스토어 사이트를 이용하며 불편했던 점들을 (특히 접근성 관점에서) 개선해본 프로젝트 (미완성)
+				</li>
+				<li>
+					<a href="https://vrisel.github.io/perfect-pitch-challenge">절대음감 챌린지</a>:
+					주어지는 소리의 음이름을 맞히는 미니 게임
 				</li>
 			</ul>
 		</article>
@@ -144,7 +151,7 @@
 	<script>
 		var today = new Date();
 		var startDay = new Date(2020, 8-1, 14);
-		var duration = Math.ceil((today.getTime()-startDay.getTime())/1000/60/60/24)
+		var duration = Math.ceil((today.getTime()-startDay.getTime())/1000/60/60/24)-71;
 		document.getElementById("duolingo").innerHTML = duration;
 	</script>
 	<script>
