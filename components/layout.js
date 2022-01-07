@@ -27,7 +27,6 @@ import ArticleIcon from "@mui/icons-material/Article";
 // native
 import Head from "next/head";
 import { useState } from "react";
-import Image from "next/image";
 
 const drawerWidth = 150;
 
@@ -254,12 +253,7 @@ export default function Layout({ children }) {
               <Typography>
                 Made by <strong>VRISEL</strong>
               </Typography>
-              <Image
-                src="/vrisel.png"
-                alt="Vrisel Logo"
-                width={16}
-                height={16}
-              />
+              <img src="/vrisel.png" alt="Vrisel Logo" height="24" />
             </Link>
           </Box>
         </Box>
