@@ -234,8 +234,16 @@ export default function Layout({ children }) {
             </List>
           </Drawer>
         </ThemeProvider>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          <DrawerHeader />
+        <Box
+          component="main"
+          sx={{
+            p: 3,
+            position: "relative",
+            marginTop: "64px",
+            height: "calc(100vh - 64px)",
+            overflowY: "auto",
+          }}
+        >
           {children}
           <Box
             component="footer"
