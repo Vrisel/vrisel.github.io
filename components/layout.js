@@ -241,6 +241,7 @@ export default function Layout({ children }) {
             position: "relative",
             marginTop: "64px",
             height: "calc(100vh - 64px)",
+            widht: "100%",
             overflowY: "auto",
           }}
         >
