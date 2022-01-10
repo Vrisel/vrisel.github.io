@@ -248,7 +248,7 @@ export default function Layout({ children }) {
               href="https://vrisel.github.io/"
               target="_blank"
               rel="noreferrer"
-              sx={{ display: "flex" }}
+              sx={{ display: "flex", justifyContent: "center" }}
             >
               <Typography>
                 Made by <strong>VRISEL</strong>
