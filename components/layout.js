@@ -253,6 +253,7 @@ export default function Layout({ children }) {
               <Typography>
                 Made by <strong>VRISEL</strong>
               </Typography>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/vrisel.png" alt="Vrisel Logo" height="24" />
             </Link>
           </Box>
