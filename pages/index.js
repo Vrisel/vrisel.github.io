@@ -60,9 +60,11 @@ export default function Home() {
           <Typography component="h2" variant="h4" id="home">
             Hello, World! 🎉
           </Typography>
-          <Typography paragraph>
-            프론트&백 풀스택 프로그래머를 지망하는 <strong>Vrisel</strong>
-            입니다.
+          <Box>
+            <Typography paragraph>
+              프론트&백 풀스택 프로그래머를 지망하는 <strong>Vrisel</strong>
+              입니다.
+            </Typography>
             <Box component="ul" className={classes.mbList}>
               <Typography component="li">
                 <dfn title="새 사도신경">
@@ -87,7 +89,7 @@ export default function Home() {
                 </Box>
               </Typography>
             </Box>
-          </Typography>
+          </Box>
         </Box>
         <SkillsSection mb={7} dlClass={classes.dataList} />
         <ProjectsSection mb={7} />
@@ -281,6 +283,9 @@ const ProjectsSection = (props) => {
                 height: "100%",
                 minHeight: "340px",
                 position: "relative",
+                /* "&:hover": {
+                  top: "2px",
+                }, */
               }}
             >
               <CardMedia component="img" src={atc.src} alt="" />
@@ -318,44 +323,42 @@ const ContactsSection = (props) => {
         <ContactsIcon />
         Contacts and Links
       </Typography>
-      <Box component="address">
-        <Box component="ul">
-          {[
-            {
-              title: "E-mail: vrisel.p@gmail.com",
-              icon: <EMailIcon />,
-              href: "mailto:vrisel.p@gmail.com",
-            },
-            {
-              title: "GitHub",
-              icon: <GitHubIcon />,
-              href: "https://www.github.com/vrisel",
-              target: "_blank",
-            },
-            {
-              title: "Velog (공부노트)",
-              icon: <NoteIcon />,
-              href: "https://velog.io/@vrisel",
-              target: "_blank",
-            },
-            {
-              title: "Twitter",
-              icon: <TwitterIcon />,
-              href: "https://www.twitter.com/vrisel_p",
-              target: "_blank",
-            },
-          ].map((item, index) => (
-            <Box component="li" key={index}>
-              {item.icon}
-              <Link
-                href={item.href}
-                {...(item.target && { target: item.target, rel: "noopener" })}
-              >
-                {item.title}
-              </Link>
-            </Box>
-          ))}
-        </Box>
+      <Box component="ul">
+        {[
+          {
+            title: "E-mail: vrisel.p@gmail.com",
+            icon: <EMailIcon />,
+            href: "mailto:vrisel.p@gmail.com",
+          },
+          {
+            title: "GitHub",
+            icon: <GitHubIcon />,
+            href: "https://www.github.com/vrisel",
+            target: "_blank",
+          },
+          {
+            title: "Velog (공부노트)",
+            icon: <NoteIcon />,
+            href: "https://velog.io/@vrisel",
+            target: "_blank",
+          },
+          {
+            title: "Twitter",
+            icon: <TwitterIcon />,
+            href: "https://www.twitter.com/vrisel_p",
+            target: "_blank",
+          },
+        ].map((item, index) => (
+          <Box component="li" key={index}>
+            {item.icon}
+            <Link
+              href={item.href}
+              {...(item.target && { target: item.target, rel: "noopener" })}
+            >
+              {item.title}
+            </Link>
+          </Box>
+        ))}
       </Box>
     </Box>
   );

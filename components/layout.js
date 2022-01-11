@@ -27,8 +27,16 @@ import ArticleIcon from "@mui/icons-material/Article";
 // native
 import Head from "next/head";
 import { useState } from "react";
+import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 150;
+const evaColor = {
+  blue: "#615aa8",
+  violet: "#592661",
+  green: "#a3da58",
+  orange: "#f7ba2b",
+  red: "#ff1e3c",
+};
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -100,14 +108,14 @@ const drawerTheme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: "#9056c1",
+          backgroundColor: evaColor.blue,
         },
       },
     },
     MuiListItem: {
       styleOverrides: {
         root: {
-          "&:hover": { backgroundColor: "rgba(0,0,0,0.3)" },
+          "&:hover": { backgroundColor: "rgba(0,0,0,0.2)" },
         },
       },
     },
@@ -115,8 +123,8 @@ const drawerTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-selected": {
-            color: "#ff1e3c!important",
-            backgroundColor: "rgba(25, 25, 25, 0.2)!important",
+            color: `${evaColor.red}!important`,
+            backgroundColor: "rgba(0, 0, 0, 0.2)!important",
           },
         },
       },
@@ -133,9 +141,8 @@ const drawerTheme = createTheme({
 
 export default function Layout({ children }) {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
 
+  const [open, setOpen] = useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -143,6 +150,7 @@ export default function Layout({ children }) {
     setOpen(false);
   };
 
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const handleListItemClick = (e, i) => {
     setSelectedIndex(i);
   };
@@ -151,7 +159,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Vrisel" />
         <meta name="keywords" content="programmer, introduction" />
@@ -161,7 +169,11 @@ export default function Layout({ children }) {
       </Head>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <AppBar position="fixed" open={open} sx={{ height: "64px" }}>
+        <AppBar
+          position="fixed"
+          open={open}
+          sx={{ color: evaColor.orange, backgroundColor: evaColor.violet }}
+        >
           <Toolbar>
             <IconButton
               color="inherit"
@@ -179,7 +191,7 @@ export default function Layout({ children }) {
               variant="h6"
               noWrap
               component="h1"
-              sx={{ color: "#f8ba2b", fontWeight: 800 }}
+              sx={{ fontWeight: 800 }}
             >
               VRISEL
             </Typography>
@@ -213,9 +225,9 @@ export default function Layout({ children }) {
                   button
                   key={item.text}
                   sx={{
+                    color: evaColor.green,
                     p: 0,
-                    color: "#fffc8c",
-                    "&:hover": { color: "#88ee66" },
+                    "&:hover": { color: "#f7ba2b" },
                   }}
                 >
                   <ListItemButton
@@ -237,11 +249,11 @@ export default function Layout({ children }) {
         <Box
           component="main"
           sx={{
-            p: 3,
+            p: 2,
             position: "relative",
             marginTop: "64px",
             height: "calc(100vh - 64px)",
-            widht: "100%",
+            width: "100%",
             overflowY: "auto",
           }}
         >
