@@ -5,6 +5,7 @@ import {
   CardContent,
   CardMedia,
   Container,
+  Grid,
   Link,
   Typography,
 } from "@mui/material";
@@ -49,7 +50,7 @@ export default function Home() {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      71;
+      72;
     return duration;
   };
 
@@ -105,6 +106,10 @@ export default function Home() {
               <Box component="li">
                 <strong>Vrisel</strong>은 silver의 애너그램입니다. <br />
                 (이름 지을 당시에 사용하던 노트북이 은색)
+              </Box>
+              <Box component="li">
+                본 페이지의 색상 테마는 <strong>에반게리온 초호기</strong>
+                입니다.
               </Box>
               <Box component="li">
                 가볍게 다뤄본 프로그래밍/스크립팅 언어들:
@@ -243,26 +248,27 @@ const ProjectsSection = (props) => {
         <InventoryIcon />
         Projects
       </Typography>
-      <Box
+      <Grid
+        container
         component="ul"
+        spacing={1}
         sx={{
           listStyle: "none",
-          display: "flex",
-          flexWrap: "wrap",
+          p: 0,
           alignItems: "stretch",
         }}
       >
         {[
           {
-            title: "홈페이지",
-            src: "https://via.placeholder.com/240x160",
+            title: "개인 홈페이지",
+            src: "/gitpage.png",
             href: "https://vrisel.github.io/",
             desc: "자기소개 및 포트폴리오 용 홈페이지",
             skills: "NEXT",
           },
           {
             title: "무신사 스토어 클론",
-            src: "https://via.placeholder.com/240x160",
+            src: "/mss.png",
             href: "https://vrisel.github.io/mss_a11y",
             desc: "무신사 스토어 사이트를 이용하며 불편했던 점들을 (특히 접근성 관점에서) 개선해본 프로젝트 (미완성)",
             skills: "Nuxt, (express), (MySQL)",
@@ -275,11 +281,10 @@ const ProjectsSection = (props) => {
             skills: "Nuxt",
           },
         ].map((atc, index) => (
-          <Box component="li" mr={1} mb={1} key={index}>
+          <Grid item component="li" sm={6} md={3} key={index}>
             <Card
               component="article"
               sx={{
-                maxWidth: "240px",
                 height: "100%",
                 minHeight: "340px",
                 position: "relative",
@@ -288,7 +293,11 @@ const ProjectsSection = (props) => {
                 }, */
               }}
             >
-              <CardMedia component="img" src={atc.src} alt="" />
+              <CardMedia
+                component="img"
+                src={atc.src}
+                alt={`${atc.title} 썸네일`}
+              />
               <CardContent>
                 <Typography
                   component="h3"
@@ -309,9 +318,9 @@ const ProjectsSection = (props) => {
                 </Typography>
               </CardContent>
             </Card>
-          </Box>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Box>
   );
 };
