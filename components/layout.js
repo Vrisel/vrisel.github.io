@@ -26,7 +26,7 @@ import ContactsIcon from "@mui/icons-material/Contacts";
 import ArticleIcon from "@mui/icons-material/Article";
 // native
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 150;
@@ -150,10 +150,33 @@ export default function Layout({ children }) {
     setOpen(false);
   };
 
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const handleListItemClick = (e, i) => {
     setSelectedIndex(i);
   };
+
+  useEffect(() => {
+    const container = document.querySelector("main");
+    let tops = [];
+    container
+      .querySelectorAll("section")
+      .forEach((sec) => tops.push(sec.offsetTop));
+
+    const handleScroll = ({ target }) => {
+      let currentIndex = 0;
+      for (let i = 0; i < tops.length; i++) {
+        if (target.scrollTop >= tops[i] - 32) {
+          currentIndex = i;
+        } else {
+          break;
+        }
+      }
+      setSelectedIndex(currentIndex);
+    };
+
+    container.addEventListener("scroll", handleScroll, false);
+    return () => container.removeEventListener("scroll", handleScroll);
+  });
 
   return (
     <>
