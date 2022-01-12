@@ -17,28 +17,41 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import ArticleIcon from "@mui/icons-material/Article";
 import classes from "./HomeSections.module.css";
 
+const Header = (props) => {
+  return (
+    <Typography color="#fd9c0d" mb={1} sx={{ fontWeight: 600 }} {...props} />
+  );
+};
+
 const Home = (props) => {
   return (
     <Box component="section" mt={2} mb={7} aria-labelledby="home">
-      <Typography component={props.headerComponent} variant="h4" id="home">
+      <Header component={props.headerComponent} variant="h4" id="home">
         Hello, World! 🎉
-      </Typography>
+      </Header>
       <Box>
         <Typography paragraph>
+          풀스택도 프론트부터!
+          <br />
           프론트&백 풀스택 프로그래머를 지망하는 <strong>Vrisel</strong>
           입니다.
         </Typography>
         <Box component="ul" className={classes.mbList}>
           <Typography component="li">
-            <dfn title="새 사도신경">
-              {'"나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다."'}
-            </dfn>
+            <q>
+              <dfn title="새 사도신경">
+                나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.
+              </dfn>
+            </q>
           </Typography>
           <Typography component="li">
             모든 <strong>사람이 사람답게</strong> 살 수 있는 세상을 꿈꿉니다.
             <Box component="ul">
               <Typography component="li">
                 프로그래머의 <strong>사회적 역할</strong>에 대해 고민합니다.
+              </Typography>
+              <Typography component="li">
+                웹 접근성에 큰 관심을 가지고 있습니다.
               </Typography>
             </Box>
           </Typography>
@@ -59,17 +72,20 @@ const Home = (props) => {
 const Skills = (props) => {
   return (
     <Box component="section" mb={props.mb} aria-labelledby="skills">
-      <Typography component={props.headerComponent} variant="h5" id="skills">
+      <Header component={props.headerComponent} variant="h5" id="skills">
         <DevIcon />
-        Skills
-      </Typography>
+        사용중인 기술
+      </Header>
       <Box component="dl" className={classes.dataList}>
-        <Typography component="dt">Front:</Typography>
+        <Typography component="dt">Front-end framework(library):</Typography>
         <Typography component="dd">Nuxt(Vue.js), NEXT(React)</Typography>
-        <Typography component="dt">DB:</Typography>
-        <Typography component="dd">SQL Server, MySQL, MongoDB</Typography>
+
+        <Typography component="dt">Database:</Typography>
+        <Typography component="dd">SQL(SQL Server, MySQL), MongoDB</Typography>
+
         <Typography component="dt">Middleware:</Typography>
         <Typography component="dd">express</Typography>
+
         <Typography component="dt">Full-stack:</Typography>
         <Typography component="dd">C# ASP.NET Framwork</Typography>
       </Box>
@@ -80,10 +96,10 @@ const Skills = (props) => {
 const Projects = (props) => {
   return (
     <Box component="section" mb={props.mb} aria-labelledby="projects">
-      <Typography component={props.headerComponent} variant="h5" id="projects">
+      <Header component={props.headerComponent} variant="h5" id="projects">
         <InventoryIcon />
-        Projects
-      </Typography>
+        프로젝트
+      </Header>
       <Grid
         container
         component="ul"
@@ -99,7 +115,7 @@ const Projects = (props) => {
             title: "개인 홈페이지",
             src: "/gitpage.png",
             href: "https://vrisel.github.io/",
-            desc: "자기소개 및 포트폴리오 용 홈페이지",
+            desc: "자기소개 및 포트폴리오 용 홈페이지 (현재 페이지)",
             skills: "NEXT",
           },
           {
@@ -164,10 +180,10 @@ const Projects = (props) => {
 const Contacts = (props) => {
   return (
     <Box component="section" mb={props.mb} aria-labelledby="contacts">
-      <Typography component={props.headerComponent} variant="h5" id="contacts">
+      <Header component={props.headerComponent} variant="h5" id="contacts">
         <ContactsIcon />
-        Contacts and Links
-      </Typography>
+        연락처 및 링크
+      </Header>
       <Box component="ul">
         {[
           {
@@ -221,10 +237,10 @@ const TMI = (props) => {
 
   return (
     <Box component="section" mb={props.mb} aria-labelledby="tmi">
-      <Typography component={props.headerComponent} variant="h5" id="tmi">
+      <Header component={props.headerComponent} variant="h5" id="tmi">
         <ArticleIcon />
         <abbr title="Too Much Information">TMI</abbr>
-      </Typography>
+      </Header>
       <Box component="details">
         <summary>펼치기/접기</summary>
         <Box component="ul" className={classes.mbList}>

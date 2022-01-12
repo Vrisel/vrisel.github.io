@@ -165,7 +165,7 @@ export default function Layout({ children }) {
     const handleScroll = ({ target }) => {
       let currentIndex = 0;
       for (let i = 0; i < tops.length; i++) {
-        if (target.scrollTop >= tops[i] - 32) {
+        if (target.scrollTop >= tops[i] - tops[0]) {
           currentIndex = i;
         } else {
           break;
@@ -264,7 +264,7 @@ export default function Layout({ children }) {
         <Box
           component="main"
           sx={{
-            p: 2,
+            px: 2,
             position: "relative",
             marginTop: "64px",
             height: "calc(100vh - 64px)",
@@ -277,7 +277,7 @@ export default function Layout({ children }) {
             component="footer"
             sx={{
               borderTop: "1px solid #000",
-              pt: "24px",
+              py: "24px",
             }}
           >
             <Link
