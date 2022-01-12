@@ -180,16 +180,6 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Head>
-        <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="Vrisel" />
-        <meta name="keywords" content="programmer, introduction" />
-        <meta name="description" content="브리셀의 홈페이지" />
-        <link rel="icon" href="/favicon.ico" />
-        <title>브리셀 Vrisel</title>
-      </Head>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
@@ -214,7 +204,9 @@ export default function Layout({ children }) {
               variant="h6"
               noWrap
               component="h1"
-              sx={{ fontWeight: 800 }}
+              sx={{
+                fontWeight: 600,
+              }}
             >
               VRISEL
             </Typography>
