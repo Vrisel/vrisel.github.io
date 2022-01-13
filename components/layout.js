@@ -155,28 +155,26 @@ export default function Layout({ children }) {
     setSelectedIndex(i);
   };
 
+  const [sectionTops, setSectionTops] = useState([]);
   useEffect(() => {
     const container = document.querySelector("main");
     let tops = [];
     container
       .querySelectorAll("section")
       .forEach((sec) => tops.push(sec.offsetTop));
-
-    const handleScroll = ({ target }) => {
-      let currentIndex = 0;
-      for (let i = 0; i < tops.length; i++) {
-        if (target.scrollTop >= tops[i] - tops[0]) {
-          currentIndex = i;
-        } else {
-          break;
-        }
+    setSectionTops(tops);
+  }, []);
+  const handleScroll = ({ target }) => {
+    let currentIndex = 0;
+    for (let i = 0; i < sectionTops.length; i++) {
+      if (target.scrollTop >= sectionTops[i] - sectionTops[0]) {
+        currentIndex = i;
+      } else {
+        break;
       }
-      setSelectedIndex(currentIndex);
-    };
-
-    container.addEventListener("scroll", handleScroll, false);
-    return () => container.removeEventListener("scroll", handleScroll);
-  });
+    }
+    setSelectedIndex(currentIndex);
+  };
 
   return (
     <>
@@ -271,6 +269,7 @@ export default function Layout({ children }) {
             width: "100%",
             overflowY: "auto",
           }}
+          onScroll={(e) => handleScroll(e)}
         >
           {children}
           <Box
