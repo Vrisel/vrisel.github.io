@@ -17,17 +17,39 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import ArticleIcon from "@mui/icons-material/Article";
 import classes from "./HomeSections.module.css";
 
+const TOP_MARGIN = 4;
 const Header = (props) => {
   return (
-    <Typography color="#fd9c0d" mb={1} sx={{ fontWeight: 600 }} {...props} />
+    <Typography
+      color="#fd9c0d" // AT Field Orange
+      mb={1}
+      sx={[
+        { fontWeight: 600 },
+        props.id && {
+          "&::before": {
+            content: `""`,
+            display: "block",
+            height: `${TOP_MARGIN * 8}px`,
+            marginTop: `${TOP_MARGIN * -8}px`,
+            visibility: "hidden",
+          },
+        },
+      ]}
+      {...props}
+    />
   );
 };
 
 const Home = (props) => {
   return (
-    <Box component="section" mt={2} mb={7} aria-labelledby="home">
+    <Box
+      component="section"
+      mt={TOP_MARGIN}
+      mb={props.mb}
+      aria-labelledby="home"
+    >
       <Header component={props.headerComponent} variant="h4" id="home">
-        Hello, World! 🎉
+        🎉Hello, World!
       </Header>
       <Box>
         <Typography paragraph>
@@ -71,7 +93,12 @@ const Home = (props) => {
 
 const Skills = (props) => {
   return (
-    <Box component="section" mb={props.mb} aria-labelledby="skills">
+    <Box
+      component="section"
+      mb={props.mb}
+      aria-labelledby="skills"
+      sx={{ position: "relative" }}
+    >
       <Header component={props.headerComponent} variant="h5" id="skills">
         <DevIcon />
         사용중인 기술
@@ -335,7 +362,7 @@ const TMI = (props) => {
                 >
                   인공어
                 </Link>
-                :
+                :{" "}
                 <strong>
                   <dfn title="퀘냐: 「반지의 제왕」으로 유명한 JRR톨킨의 작품에 등장하는 요정어 중 하나">
                     <Link
