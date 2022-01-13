@@ -10,7 +10,7 @@ import {
 import DevIcon from "@mui/icons-material/LogoDev";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ContactsIcon from "@mui/icons-material/Contacts";
-import EMailIcon from "@mui/icons-material/EMail";
+import EMailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import NoteIcon from "@mui/icons-material/NoteAlt";
 import TwitterIcon from "@mui/icons-material/Twitter";
