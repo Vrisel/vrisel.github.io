@@ -141,7 +141,7 @@ const Projects = (props) => {
           {
             title: "개인 홈페이지",
             src: "/gitpage.png",
-            href: "https://vrisel.github.io/",
+            href: "https://vrisel.vercel.app/",
             desc: "자기소개 및 포트폴리오 용 홈페이지 (현재 페이지)",
             skills: "NEXT",
           },
