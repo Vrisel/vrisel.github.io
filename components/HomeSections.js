@@ -147,18 +147,18 @@ const Projects = (props) => {
             skills: "NEXT",
           },
           {
-            title: "무신사 스토어 클론",
-            src: "/mss.png",
-            href: "https://vrisel.github.io/mss_a11y",
-            desc: "무신사 스토어 사이트를 이용하며 불편했던 점들을 (특히 접근성 관점에서) 개선해본 프로젝트 (미완성)",
-            skills: "Nuxt, vuex, (jest),` (express), (MySQL)",
-          },
-          {
             title: "절대음감 챌린지",
             src: "/ppc.png",
             href: "https://vrisel.github.io/perfect-pitch-challenge",
             desc: "주어지는 소리의 음이름을 맞히는 미니 게임",
             skills: "Nuxt",
+          },
+          {
+            title: "무신사 스토어 클론",
+            src: "/mss.png",
+            href: "https://vrisel.github.io/mss_a11y",
+            desc: "무신사 스토어 사이트를 이용하며 불편했던 점들을 (특히 접근성 관점에서) 개선해본 프로젝트 (미완성)",
+            skills: "Nuxt, vuex, (jest), (express), (MySQL)",
           },
         ].map((atc, index) => (
           <Grid item component="li" sm={6} md={3} key={index}>
@@ -174,6 +174,7 @@ const Projects = (props) => {
               }}
             >
               <CardMedia>
+                {}
                 <Image
                   src={atc.src}
                   width={240}
