@@ -284,7 +284,7 @@ const TMI = (props) => {
             본 페이지의 색상 테마는 <strong>에반게리온 초호기</strong>
             입니다.
           </Box>
-          <Box component="li">
+          {/* <Box component="li">
             가볍게 다뤄본 프로그래밍/스크립팅 언어들:
             <Box component="ul">
               <Box component="li">
@@ -324,7 +324,7 @@ const TMI = (props) => {
                 </Link>
               </Box>
             </Box>
-          </Box>
+          </Box> */}
           <Box component="li">
             프로그래밍 언어 외에도 각종 언어들을 좋아합니다.
             <Box component="ul">

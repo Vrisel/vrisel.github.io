@@ -225,7 +225,7 @@ export default function Layout({ children }) {
             <List>
               {[
                 { text: "Home", href: "#home", icon: <HomeIcon /> },
-                { text: "Skills", href: "#skills", icon: <DevIcon /> },
+                // { text: "Skills", href: "#skills", icon: <DevIcon /> },
                 {
                   text: "Projects",
                   href: "#projects",
