@@ -6,7 +6,9 @@ import {
   Grid,
   Link,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import DevIcon from "@mui/icons-material/LogoDev";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ContactsIcon from "@mui/icons-material/Contacts";
@@ -122,6 +124,8 @@ const Skills = (props) => {
 };
 
 const Projects = (props) => {
+  const theme = useTheme();
+  const downSm = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box component="section" mb={props.mb} aria-labelledby="projects">
       <Header component={props.headerComponent} variant="h5" id="projects">
@@ -130,12 +134,12 @@ const Projects = (props) => {
       </Header>
       <Grid
         container
-        component="ul"
+        component="ol"
         spacing={1}
         sx={{
           listStyle: "none",
           p: 0,
-          alignItems: "stretch",
+          // alignItems: "stretch",
         }}
       >
         {[
@@ -143,63 +147,153 @@ const Projects = (props) => {
             title: "개인 홈페이지",
             src: "/gitpage.png",
             href: "https://vrisel.vercel.app/",
-            desc: "자기소개 및 포트폴리오 용 홈페이지 (현재 페이지)",
-            skills: "NEXT",
+            desc: (
+              <ul>
+                <li>자기소개 및 포트폴리오 용 홈페이지(현재 페이지)</li>
+                <li>연습을 겸하여 NEXT(React)로 제작</li>
+                <li>스크립트 동작을 위해 GitPage가 아닌 Vercel로 배포</li>
+              </ul>
+            ),
+            main: "NEXT",
+            ui: "Material-UI",
           },
           {
             title: "절대음감 챌린지",
             src: "/ppc.png",
             href: "https://vrisel.github.io/perfect-pitch-challenge",
-            desc: "주어지는 소리의 음이름을 맞히는 미니 게임",
-            skills: "Nuxt",
+            desc: (
+              <ul>
+                <li>
+                  배포 및 공유 경험에 중점을 둔 만든 미니 게임
+                  <ul>
+                    <li>주어지는 소리를 듣고 음이름을 맞히는 게임</li>
+                    <li>
+                      <code>tone.js</code>라는 라이브러리를 사용하여 음 발생
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <s>디자이너 구합니다</s>
+                </li>
+              </ul>
+            ),
+            main: "Nuxt, tone.js",
+            ui: "Vuetify",
           },
           {
-            title: "무신사 스토어 클론",
+            title: "무신사 스토어 클론 (미완성)",
             src: "/mss.png",
             href: "https://vrisel.github.io/mss_a11y",
-            desc: "무신사 스토어 사이트를 이용하며 불편했던 점들을 (특히 접근성 관점에서) 개선해본 프로젝트 (미완성)",
-            skills: "Nuxt, vuex, (jest), (express), (MySQL)",
+            desc: (
+              <ul>
+                <li>
+                  웹 접근성 향상에 중점을 둔 클로닝 프로젝트
+                  <ul>
+                    <li>
+                      기존 무신사 스토어 홈페이지를 디자인 시안처럼 사용
+                      <ul>
+                        <li>
+                          퍼블리싱이 주 목표가 아니기 때문에, 외관은
+                          라이브러리를 이용하여 <u>비슷한 정도로만</u> 구현
+                        </li>
+                        <li>
+                          원본 인터페이스가 반응형이 아니라서 본 프로젝트도
+                          반응형으로 구현하지 않음
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      접근성 관점에서 개선이 필요해보이는 부분은 임의로 수정함
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  bootstrap-vue 라이브러리에서 제공되는 컴포넌트 외에 추가
+                  기능이나 컴포넌트를 직접 구현함
+                  <br />
+                  <Link
+                    href="https://github.com/Vrisel/mss_a11y#%ED%8A%B9%EB%B3%84%ED%9E%88-%EA%B5%AC%ED%98%84%ED%95%9C-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8"
+                    target="_blank"
+                  >
+                    (관련 README)
+                  </Link>
+                </li>
+                <li>
+                  동료 개발자 및 협업의 필요성을 느끼고 잠시 중단함
+                  <ul>
+                    <li>함께 개선사항에 대에 토의할 기획자, 디자이너</li>
+                    <li>백엔드 개발자</li>
+                  </ul>
+                </li>
+              </ul>
+            ),
+            main: "Nuxt",
+            ui: "Bootstrap-vue",
+            etc: "vuex, (jest), (express), (MySQL)",
           },
         ].map((atc, index) => (
-          <Grid item component="li" sm={6} md={3} key={index}>
+          <Grid
+            item
+            component="li"
+            sx={{
+              width: "100%",
+            }}
+            key={index}
+          >
             <Card
               component="article"
               sx={{
                 height: "100%",
-                minHeight: "340px",
+                width: "100%",
                 position: "relative",
                 /* "&:hover": {
                   top: "2px",
                 }, */
+                display: "flex",
+                ...(downSm && {
+                  flexDirection: "column",
+                  alignItems: "center",
+                }),
               }}
             >
-              <CardMedia>
-                {}
+              <CardMedia sx={{ flex: "none", p: "16px" }}>
                 <Image
                   src={atc.src}
-                  width={240}
-                  height={160}
+                  width={3 * 100}
+                  height={2 * 100}
                   alt={`${atc.title} 썸네일`}
                 />
               </CardMedia>
-              <CardContent>
+              <CardContent sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography
                   component="h3"
                   variant="h6"
-                  align="center"
                   gutterBottom
+                  sx={{
+                    fontWeight: "bold",
+                    /* ...(downSm && { textAlign: "center" }) */
+                  }}
                 >
                   <Link href={atc.href}>{atc.title}</Link>
                 </Typography>
-                <Typography variant="body2" mb={1.5}>
-                  {atc.desc}
-                </Typography>
-                <Typography
+                <Box mb={1.5}>{atc.desc}</Box>
+                <Box
+                  component="ul"
                   my={1}
-                  sx={{ fontSize: "0.8em", position: "absolute", bottom: 0 }}
+                  sx={{ listStyle: "none", m: 0, p: 0 }}
                 >
-                  사용 기술: {atc.skills}
-                </Typography>
+                  <li>
+                    <strong>메인 기술</strong>: {atc.main}
+                  </li>
+                  <li>
+                    <strong>UI 라이브러리</strong>: {atc.ui}
+                  </li>
+                  {atc.etc && (
+                    <li>
+                      <strong>기타</strong>: {atc.etc}
+                    </li>
+                  )}
+                </Box>
               </CardContent>
             </Card>
           </Grid>
