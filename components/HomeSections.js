@@ -313,24 +313,24 @@ const Contacts = (props) => {
       <Box component="ul">
         {[
           {
-            title: "E-mail: vrisel.p@gmail.com",
+            title: "이메일: vrisel.p@gmail.com",
             icon: <EMailIcon />,
             href: "mailto:vrisel.p@gmail.com",
           },
           {
-            title: "GitHub",
+            title: "깃허브(GitHub)",
             icon: <GitHubIcon />,
             href: "https://www.github.com/vrisel",
             target: "_blank",
           },
           {
-            title: "Velog (공부노트)",
+            title: "벨로그(Velog) - 공부노트",
             icon: <NoteIcon />,
             href: "https://velog.io/@vrisel",
             target: "_blank",
           },
           {
-            title: "Twitter",
+            title: "트위터",
             icon: <TwitterIcon />,
             href: "https://www.twitter.com/vrisel_p",
             target: "_blank",
