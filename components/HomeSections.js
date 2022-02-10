@@ -7,18 +7,18 @@ import {
   Link,
   Typography,
   useMediaQuery,
-} from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import DevIcon from "@mui/icons-material/LogoDev";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import ContactsIcon from "@mui/icons-material/Contacts";
-import EMailIcon from "@mui/icons-material/Email";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import NoteIcon from "@mui/icons-material/NoteAlt";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import ArticleIcon from "@mui/icons-material/Article";
-import classes from "./HomeSections.module.css";
-import Image from "next/image";
+} from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import DevIcon from '@mui/icons-material/LogoDev';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import EMailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import NoteIcon from '@mui/icons-material/NoteAlt';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import ArticleIcon from '@mui/icons-material/Article';
+import classes from './HomeSections.module.css';
+import Image from 'next/image';
 
 const TOP_MARGIN = 4;
 const Header = (props) => {
@@ -29,12 +29,12 @@ const Header = (props) => {
       sx={[
         { fontWeight: 600 },
         props.id && {
-          "&::before": {
+          '&::before': {
             content: `""`,
-            display: "block",
+            display: 'block',
             height: `${TOP_MARGIN * 8}px`,
             marginTop: `${TOP_MARGIN * -8}px`,
-            visibility: "hidden",
+            visibility: 'hidden',
           },
         },
       ]}
@@ -100,7 +100,7 @@ const Skills = (props) => {
       component="section"
       mb={props.mb}
       aria-labelledby="skills"
-      sx={{ position: "relative" }}
+      sx={{ position: 'relative' }}
     >
       <Header component={props.headerComponent} variant="h5" id="skills">
         <DevIcon />
@@ -125,7 +125,7 @@ const Skills = (props) => {
 
 const Projects = (props) => {
   const theme = useTheme();
-  const downSm = useMediaQuery(theme.breakpoints.down("md"));
+  const downSm = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box component="section" mb={props.mb} aria-labelledby="projects">
       <Header component={props.headerComponent} variant="h5" id="projects">
@@ -137,16 +137,16 @@ const Projects = (props) => {
         component="ol"
         spacing={1}
         sx={{
-          listStyle: "none",
+          listStyle: 'none',
           p: 0,
           // alignItems: "stretch",
         }}
       >
         {[
           {
-            title: "개인 홈페이지",
-            src: "/gitpage.png",
-            href: "https://vrisel.vercel.app/",
+            title: '개인 홈페이지',
+            src: '/gitpage.png',
+            href: 'https://vrisel.vercel.app/',
             desc: (
               <ul>
                 <li>자기소개 및 포트폴리오 용 홈페이지(현재 페이지)</li>
@@ -154,13 +154,13 @@ const Projects = (props) => {
                 <li>스크립트 동작을 위해 GitPage가 아닌 Vercel로 배포</li>
               </ul>
             ),
-            main: "NEXT",
-            ui: "Material-UI",
+            main: 'NEXT',
+            ui: 'Material-UI',
           },
           {
-            title: "절대음감 챌린지",
-            src: "/ppc.png",
-            href: "https://vrisel.github.io/perfect-pitch-challenge",
+            title: '절대음감 챌린지',
+            src: '/ppc.png',
+            href: 'https://vrisel.github.io/perfect-pitch-challenge',
             desc: (
               <ul>
                 <li>
@@ -177,13 +177,57 @@ const Projects = (props) => {
                 </li>
               </ul>
             ),
-            main: "Nuxt, tone.js",
-            ui: "Vuetify",
+            main: 'Nuxt, tone.js',
+            ui: 'Vuetify',
           },
           {
-            title: "무신사 스토어 클론 (미완성)",
-            src: "/mss.png",
-            href: "https://vrisel.github.io/mss_a11y",
+            title: '퀘탈레(Quetalle)',
+            src: '/quettale.png',
+            href: 'https://quettale.vercel.app',
+            desc: (
+              <ul>
+                <li>
+                  오픈소스를 클론하여 퀘냐 버전으로 만든 워들(Wordle) 게임
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.powerlanguage.co.uk/wordle/"
+                        rel="noopener noreferrer nofollow"
+                        target="_blank"
+                      >
+                        원조 워들 by Josh Wardle
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://github.com/cwackerfuss/react-wordle"
+                        rel="noopener noreferrer nofollow"
+                        target="_blank"
+                      >
+                        원본 소스 by Hannah Park
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="http://folk.uib.no/hnohf/"
+                        rel="noopener noreferrer nofollow"
+                        target="_blank"
+                      >
+                        단어 리스트 from Ardalambion
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>영어 등 다국어 지원(internationalization; i18n) 예정</li>
+              </ul>
+            ),
+            main: 'React, TypeScript',
+            ui: 'Tailwind',
+          },
+          {
+            title: '무신사 스토어 클론 (개발 중)',
+            src: '/mss.png',
+            href: 'https://vrisel.github.io/mss_a11y',
             desc: (
               <ul>
                 <li>
@@ -219,7 +263,7 @@ const Projects = (props) => {
                   </Link>
                 </li>
                 <li>
-                  동료 개발자 및 협업의 필요성을 느끼고 잠시 중단함
+                  동료 개발자 및 협업의 필요성을 느끼고 천천히 개발 중
                   <ul>
                     <li>함께 개선사항에 대에 토의할 기획자, 디자이너</li>
                     <li>백엔드 개발자</li>
@@ -227,36 +271,36 @@ const Projects = (props) => {
                 </li>
               </ul>
             ),
-            main: "Nuxt",
-            ui: "Bootstrap-vue",
-            etc: "vuex, (jest), (express), (MySQL)",
+            main: 'Nuxt',
+            ui: 'Bootstrap-vue',
+            etc: 'vuex, (jest), (express), (MySQL)',
           },
         ].map((atc, index) => (
           <Grid
             item
             component="li"
             sx={{
-              width: "100%",
+              width: '100%',
             }}
             key={index}
           >
             <Card
               component="article"
               sx={{
-                height: "100%",
-                width: "100%",
-                position: "relative",
+                height: '100%',
+                width: '100%',
+                position: 'relative',
                 /* "&:hover": {
                   top: "2px",
                 }, */
-                display: "flex",
+                display: 'flex',
                 ...(downSm && {
-                  flexDirection: "column",
-                  alignItems: "center",
+                  flexDirection: 'column',
+                  alignItems: 'center',
                 }),
               }}
             >
-              <CardMedia sx={{ flex: "none", p: "16px" }}>
+              <CardMedia sx={{ flex: 'none', p: '16px' }}>
                 <Image
                   src={atc.src}
                   width={3 * 100}
@@ -264,13 +308,13 @@ const Projects = (props) => {
                   alt={`${atc.title} 썸네일`}
                 />
               </CardMedia>
-              <CardContent sx={{ display: "flex", flexDirection: "column" }}>
+              <CardContent sx={{ display: 'flex', flexDirection: 'column' }}>
                 <Typography
                   component="h3"
                   variant="h6"
                   gutterBottom
                   sx={{
-                    fontWeight: "bold",
+                    fontWeight: 'bold',
                     /* ...(downSm && { textAlign: "center" }) */
                   }}
                 >
@@ -280,7 +324,7 @@ const Projects = (props) => {
                 <Box
                   component="ul"
                   my={1}
-                  sx={{ listStyle: "none", m: 0, p: 0 }}
+                  sx={{ listStyle: 'none', m: 0, p: 0 }}
                 >
                   <li>
                     <strong>메인 기술</strong>: {atc.main}
@@ -313,34 +357,34 @@ const Contacts = (props) => {
       <Box component="ul">
         {[
           {
-            title: "이메일: vrisel.p@gmail.com",
+            title: '이메일: vrisel.p@gmail.com',
             icon: <EMailIcon />,
-            href: "mailto:vrisel.p@gmail.com",
+            href: 'mailto:vrisel.p@gmail.com',
           },
           {
-            title: "깃허브(GitHub)",
+            title: '깃허브(GitHub)',
             icon: <GitHubIcon />,
-            href: "https://www.github.com/vrisel",
-            target: "_blank",
+            href: 'https://www.github.com/vrisel',
+            target: '_blank',
           },
           {
-            title: "벨로그(Velog) - 공부노트",
+            title: '벨로그(Velog) - 공부노트',
             icon: <NoteIcon />,
-            href: "https://velog.io/@vrisel",
-            target: "_blank",
+            href: 'https://velog.io/@vrisel',
+            target: '_blank',
           },
           {
-            title: "트위터",
+            title: '트위터',
             icon: <TwitterIcon />,
-            href: "https://www.twitter.com/vrisel_p",
-            target: "_blank",
+            href: 'https://www.twitter.com/vrisel_p',
+            target: '_blank',
           },
         ].map((item, index) => (
           <Box component="li" key={index}>
             {item.icon}
             <Link
               href={item.href}
-              {...(item.target && { target: item.target, rel: "noopener" })}
+              {...(item.target && { target: item.target, rel: 'noopener' })}
             >
               {item.title}
             </Link>
@@ -429,27 +473,27 @@ const TMI = (props) => {
                   rel="nofollows"
                 >
                   듀오링고
-                </Link>{" "}
+                </Link>{' '}
                 <u>{duolingo()}일차</u>
               </Box>
               <Box component="li">
                 일상 대화가 가능한 수준:
                 <strong>
-                  <dfn title="영어">English</dfn>,{" "}
+                  <dfn title="영어">English</dfn>,{' '}
                   <dfn title="일본어">日本語</dfn>
                 </strong>
               </Box>
               <Box component="li">
                 기초적인 수준:
                 <strong>
-                  <dfn title="독일어">Deutsch</dfn>,{" "}
+                  <dfn title="독일어">Deutsch</dfn>,{' '}
                   <dfn title="중국 표준어">普通话</dfn>
                 </strong>
               </Box>
               <Box component="li">
                 조금 배워본 것들:
                 <strong>
-                  <dfn title="스페인어">Español</dfn>,{" "}
+                  <dfn title="스페인어">Español</dfn>,{' '}
                   <dfn title="아랍어">العربية</dfn>
                 </strong>
               </Box>
@@ -461,7 +505,7 @@ const TMI = (props) => {
                 >
                   인공어
                 </Link>
-                :{" "}
+                :{' '}
                 <strong>
                   <dfn title="퀘냐: 「반지의 제왕」으로 유명한 JRR톨킨의 작품에 등장하는 요정어 중 하나">
                     <Link
