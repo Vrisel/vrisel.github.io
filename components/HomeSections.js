@@ -181,7 +181,7 @@ const Projects = (props) => {
             ui: 'Vuetify',
           },
           {
-            title: '퀘탈레(Quetalle)',
+            title: '퀘탈레(Quettale)',
             src: '/quettale.png',
             href: 'https://quettale.vercel.app',
             desc: (
@@ -218,10 +218,33 @@ const Projects = (props) => {
                     </li>
                   </ul>
                 </li>
-                <li>영어 등 다국어 지원(internationalization; i18n) 예정</li>
+                <li>영어 번역 페이지 제공</li>
+                <li>
+                  워들 네트워크에 등록
+                  <ul>
+                    <li>
+                      <a
+                        href="https://wordles.miraheze.org/wiki/https://quettale.vercel.app/"
+                        rel="noopener noreferrer nofollow"
+                        target="_blank"
+                      >
+                        Wordle Hub
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://rwmpelstilzchen.gitlab.io/wordles/#qya"
+                        rel="noopener noreferrer nofollow"
+                        target="_blank"
+                      >
+                        Wordles of the World
+                      </a>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             ),
-            main: 'React, TypeScript',
+            main: 'React, TypeScript, i18next',
             ui: 'Tailwind',
           },
           {
