@@ -424,7 +424,7 @@ const TMI = (props) => {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      72;
+      79;
     return duration;
   };
 
@@ -497,7 +497,7 @@ const TMI = (props) => {
                 >
                   듀오링고
                 </Link>{' '}
-                <u>{duolingo()}일차</u>
+                {duolingo()}일차
               </Box>
               <Box component="li">
                 일상 대화가 가능한 수준:
