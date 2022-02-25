@@ -277,20 +277,15 @@ export default function Layout({ children }) {
             sx={{
               borderTop: '1px solid #000',
               py: '24px',
+              display: 'flex',
+              justifyContent: 'center',
             }}
           >
-            <Link
-              href="https://vrisel.github.io/"
-              target="_blank"
-              rel="noreferrer"
-              sx={{ display: 'flex', justifyContent: 'center' }}
-            > */}
-              <Typography>
-                Made by <strong>VRISEL</strong>
-              </Typography>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/vrisel.png" alt="Vrisel Logo" height="24" />
-            </Link>
+            <Typography>
+              Made by <strong>VRISEL</strong>
+            </Typography>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/vrisel.png" alt="Vrisel Logo" height="24" />
           </Box>
         </Box>
       </Box>
