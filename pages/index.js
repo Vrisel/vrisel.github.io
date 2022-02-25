@@ -1,7 +1,7 @@
-import Layout from "../components/layout.js";
-import Head from "next/head";
-import Container from "@mui/material/Container";
-import * as Sections from "../components/HomeSections.js";
+import Layout from '../components/layout.js';
+import Head from 'next/head';
+import Container from '@mui/material/Container';
+import * as Sections from '../components/HomeSections.js';
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <title>브리셀(Vrisel)의 홈페이지</title>
         <meta name="description" content="브리셀의 홈페이지" />
       </Head>
-      <Container sx={{ width: "99%" }}>
+      <Container sx={{ width: '99%' }}>
         <Sections.Home mb={7} headerComponent="h2" />
         {/* <Sections.Skills mb={7} headerComponent="h2" /> */}
         <Sections.Projects mb={7} headerComponent="h2" />

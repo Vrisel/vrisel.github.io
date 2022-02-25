@@ -1,6 +1,6 @@
-import React from "react";
-import { ServerStyleSheets } from "@mui/styles";
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import React from 'react';
+import { ServerStyleSheets } from '@mui/styles';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

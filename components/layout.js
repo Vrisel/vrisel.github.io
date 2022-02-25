@@ -1,85 +1,85 @@
 // material-ui
-import { ThemeProvider, createTheme } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
-import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import { ThemeProvider, createTheme } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles';
+import MuiDrawer from '@mui/material/Drawer';
+import MuiAppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 // icons
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from "@mui/icons-material/Home";
-import DevIcon from "@mui/icons-material/LogoDev";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import ContactsIcon from "@mui/icons-material/Contacts";
-import ArticleIcon from "@mui/icons-material/Article";
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import DevIcon from '@mui/icons-material/LogoDev';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import ArticleIcon from '@mui/icons-material/Article';
 // native
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import { makeStyles } from "@mui/styles";
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import { makeStyles } from '@mui/styles';
 
 const drawerWidth = 150;
 const evaColor = {
-  blue: "#615aa8",
-  violet: "#592661",
-  green: "#a3da58",
-  orange: "#f7ba2b",
-  red: "#ff1e3c",
+  blue: '#615aa8',
+  violet: '#592661',
+  green: '#a3da58',
+  orange: '#f7ba2b',
+  red: '#ff1e3c',
 };
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
-  transition: theme.transitions.create("width", {
+  transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
   }),
-  overflowX: "hidden",
+  overflowX: 'hidden',
 });
 
 const closedMixin = (theme) => ({
-  transition: theme.transitions.create("width", {
+  transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  overflowX: "hidden",
+  overflowX: 'hidden',
   width: `calc(${theme.spacing(7)} + 1px)`,
   /* [theme.breakpoints.up("sm")]: {
     width: `calc(${theme.spacing(9)} + 1px)`,
   }, */
 });
 
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-end",
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
+  shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
+  transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
+    transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
@@ -87,19 +87,19 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
+  shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   width: drawerWidth,
   flexShrink: 0,
-  whiteSpace: "nowrap",
-  boxSizing: "border-box",
+  whiteSpace: 'nowrap',
+  boxSizing: 'border-box',
   ...(open && {
     ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
+    '& .MuiDrawer-paper': openedMixin(theme),
   }),
   ...(!open && {
     ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
+    '& .MuiDrawer-paper': closedMixin(theme),
   }),
 }));
 
@@ -115,16 +115,16 @@ const drawerTheme = createTheme({
     MuiListItem: {
       styleOverrides: {
         root: {
-          "&:hover": { backgroundColor: "rgba(0,0,0,0.2)" },
+          '&:hover': { backgroundColor: 'rgba(0,0,0,0.2)' },
         },
       },
     },
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          "&.Mui-selected": {
+          '&.Mui-selected': {
             color: `${evaColor.red}!important`,
-            backgroundColor: "rgba(0, 0, 0, 0.2)!important",
+            backgroundColor: 'rgba(0, 0, 0, 0.2)!important',
           },
         },
       },
@@ -157,10 +157,10 @@ export default function Layout({ children }) {
 
   const [sectionTops, setSectionTops] = useState([]);
   useEffect(() => {
-    const container = document.querySelector("main");
+    const container = document.querySelector('main');
     let tops = [];
     container
-      .querySelectorAll("section")
+      .querySelectorAll('section')
       .forEach((sec) => tops.push(sec.offsetTop));
     setSectionTops(tops);
   }, []);
@@ -178,7 +178,7 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -192,8 +192,8 @@ export default function Layout({ children }) {
               onClick={handleDrawerOpen}
               edge="start"
               sx={{
-                marginRight: "36px",
-                ...(open && { display: "none" }),
+                marginRight: '36px',
+                ...(open && { display: 'none' }),
               }}
             >
               <MenuIcon />
@@ -214,7 +214,7 @@ export default function Layout({ children }) {
           <Drawer variant="permanent" open={open}>
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
-                {theme.direction === "rtl" ? (
+                {theme.direction === 'rtl' ? (
                   <ChevronRightIcon />
                 ) : (
                   <ChevronLeftIcon />
@@ -224,15 +224,15 @@ export default function Layout({ children }) {
             <Divider />
             <List>
               {[
-                { text: "Home", href: "#home", icon: <HomeIcon /> },
+                { text: 'Home', href: '#home', icon: <HomeIcon /> },
                 // { text: "Skills", href: "#skills", icon: <DevIcon /> },
                 {
-                  text: "Projects",
-                  href: "#projects",
+                  text: 'Projects',
+                  href: '#projects',
                   icon: <InventoryIcon />,
                 },
-                { text: "Contacts", href: "#contacts", icon: <ContactsIcon /> },
-                { text: "TMI", href: "#tmi", icon: <ArticleIcon /> },
+                { text: 'Contacts', href: '#contacts', icon: <ContactsIcon /> },
+                { text: 'TMI', href: '#tmi', icon: <ArticleIcon /> },
               ].map((item, index) => (
                 <ListItem
                   button
@@ -240,7 +240,7 @@ export default function Layout({ children }) {
                   sx={{
                     color: evaColor.green,
                     p: 0,
-                    "&:hover": { color: "#f7ba2b" },
+                    '&:hover': { color: '#f7ba2b' },
                   }}
                 >
                   <ListItemButton
@@ -249,7 +249,7 @@ export default function Layout({ children }) {
                     selected={selectedIndex === index}
                     onClick={(event) => handleListItemClick(event, index)}
                   >
-                    <ListItemIcon sx={{ color: "inherit", minWidth: "40px" }}>
+                    <ListItemIcon sx={{ color: 'inherit', minWidth: '40px' }}>
                       {item.icon}
                     </ListItemIcon>
                     <ListItemText primary={item.text} />
@@ -263,11 +263,11 @@ export default function Layout({ children }) {
           component="main"
           sx={{
             px: 2,
-            position: "relative",
-            marginTop: "64px",
-            height: "calc(100vh - 64px)",
-            width: "100%",
-            overflowY: "auto",
+            position: 'relative',
+            marginTop: '64px',
+            height: 'calc(100vh - 64px)',
+            width: '100%',
+            overflowY: 'auto',
           }}
           onScroll={(e) => handleScroll(e)}
         >
@@ -275,16 +275,16 @@ export default function Layout({ children }) {
           <Box
             component="footer"
             sx={{
-              borderTop: "1px solid #000",
-              py: "24px",
+              borderTop: '1px solid #000',
+              py: '24px',
             }}
           >
             <Link
               href="https://vrisel.github.io/"
               target="_blank"
               rel="noreferrer"
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
+              sx={{ display: 'flex', justifyContent: 'center' }}
+            > */}
               <Typography>
                 Made by <strong>VRISEL</strong>
               </Typography>
