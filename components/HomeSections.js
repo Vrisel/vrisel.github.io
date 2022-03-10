@@ -63,20 +63,11 @@ const Home = (props) => {
         </Typography>
         <Box component="ul" className={classes.mbList}>
           <Typography component="li">
-            <q>
-              <dfn title="새 사도신경">
-                나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.
-              </dfn>
-            </q>
-          </Typography>
-          <Typography component="li">
-            모든 <strong>사람이 사람답게</strong> 살 수 있는 세상을 꿈꿉니다.
+            <strong>모든 사람이 차별 없이 사람답게</strong> 살 수 있는 세상을
+            꿈꿉니다.
             <Box component="ul">
               <Typography component="li">
-                프로그래머의 <strong>사회적 역할</strong>에 대해 고민합니다.
-              </Typography>
-              <Typography component="li">
-                웹 접근성에 큰 관심을 가지고 있습니다.
+                누구에게나 접근성이 좋은 프로그램을 만들기 위해 노력합니다.
               </Typography>
             </Box>
           </Typography>
@@ -84,9 +75,27 @@ const Home = (props) => {
             새로이 <strong>배우는 것</strong>을 좋아합니다.
             <Box component="ul">
               <Typography component="li">
-                <strong>배워서 남 주는 사람</strong>이 되고 싶습니다.
+                하나가 궁금했는데 결국 열 가지를 찾아보는 타입
+              </Typography>
+              <Typography component="li">
+                시간이 조금 걸릴 때도 있지만, 기반이 탄탄할수록 활용성도 커지는
+                것 같습니다.
+              </Typography>
+              <Typography component="li">
+                배움이 지식에서 끝나지 않고 다른 사람들에게 도움이 될 때 기쁨과
+                보람을 느낍니다.
               </Typography>
             </Box>
+          </Typography>
+          <Typography component="li">
+            <s>잘 보이시겠지만 디자인 쪽 스탯은 안 찍었습니다.</s>
+          </Typography>
+          <Typography component="li">
+            <q>
+              <dfn title="새 사도신경">
+                나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.
+              </dfn>
+            </q>
           </Typography>
         </Box>
       </Box>
@@ -287,10 +296,10 @@ const Projects = (props) => {
                 </li>
                 <li>
                   동료 개발자 및 협업의 필요성을 느끼고 천천히 개발 중
-                  <ul>
+                  {/* <ul>
                     <li>함께 개선사항에 대에 토의할 기획자, 디자이너</li>
                     <li>백엔드 개발자</li>
-                  </ul>
+                  </ul> */}
                 </li>
               </ul>
             ),
@@ -424,7 +433,7 @@ const TMI = (props) => {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      79;
+      82;
     return duration;
   };
 
@@ -438,11 +447,26 @@ const TMI = (props) => {
         <summary>펼치기/접기</summary>
         <Box component="ul" className={classes.mbList}>
           <Box component="li">
-            <strong>Vrisel</strong>은 silver의 애너그램입니다. <br />
+            <strong>Vrisel</strong>은 silver의{' '}
+            <Link
+              href="https://ko.wikipedia.org/wiki/%EC%96%B4%EA%B5%AC%EC%A0%84%EC%B2%A0"
+              target="_blank"
+              rel="noreferrer nopener nofollow"
+            >
+              애너그램
+            </Link>
+            입니다. <br />
             (이름 지을 당시에 사용하던 노트북이 은색)
           </Box>
           <Box component="li">
-            본 페이지의 색상 테마는 <strong>에반게리온 초호기</strong>
+            본 페이지의 색상 테마는{' '}
+            <Link
+              href="https://ko.wikipedia.org/wiki/%EC%97%90%EB%B0%98%EA%B2%8C%EB%A6%AC%EC%98%A8_(%EA%B0%80%EA%B3%B5%EC%9D%98_%EB%B3%91%EA%B8%B0)#%EC%97%90%EB%B0%94_%EC%B4%88%ED%98%B8%EA%B8%B0"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+            >
+              <strong>에반게리온 초호기</strong>
+            </Link>
             입니다.
           </Box>
           {/* <Box component="li">
@@ -452,7 +476,7 @@ const TMI = (props) => {
                 <Link
                   href="https://www.mirc.com/"
                   target="_blank"
-                  rel="noreferrer nofollow"
+                  rel="noreferrer noopener nofollow"
                 >
                   mIRC
                 </Link>
@@ -471,7 +495,7 @@ const TMI = (props) => {
                 <Link
                   href="https://www.autohotkey.com/"
                   target="_blank"
-                  rel="noreferrer nofollow"
+                  rel="noreferrer noopener nofollow"
                 >
                   AutoHotKey
                 </Link>
@@ -479,7 +503,7 @@ const TMI = (props) => {
                 <Link
                   href="https://www.autoitscript.com/"
                   target="_blank"
-                  rel="noreferrer nofollow"
+                  rel="noreferrer noopener nofollow"
                 >
                   AutoIt
                 </Link>
@@ -493,7 +517,7 @@ const TMI = (props) => {
                 <Link
                   href="https://www.duolingo.com/"
                   target="_blank"
-                  rel="nofollows"
+                  rel="noreferrer noopener nofollow"
                 >
                   듀오링고
                 </Link>{' '}
@@ -510,16 +534,16 @@ const TMI = (props) => {
                 기초적인 수준:
                 <strong>
                   <dfn title="독일어">Deutsch</dfn>,{' '}
-                  <dfn title="중국 표준어">普通话</dfn>
+                  <dfn title="중국어">普通话</dfn>
                 </strong>
               </Box>
-              <Box component="li">
-                조금 배워본 것들:
+              {/* <Box component="li">
+                조금 배워본 정도:
                 <strong>
                   <dfn title="스페인어">Español</dfn>,{' '}
                   <dfn title="아랍어">العربية</dfn>
                 </strong>
-              </Box>
+              </Box> */}
               <Box component="li">
                 <Link
                   href="https://ko.wikipedia.org/wiki/%EC%9D%B8%EA%B3%B5%EC%96%B4"
@@ -530,7 +554,7 @@ const TMI = (props) => {
                 </Link>
                 :{' '}
                 <strong>
-                  <dfn title="퀘냐: 「반지의 제왕」으로 유명한 JRR톨킨의 작품에 등장하는 요정어 중 하나">
+                  <dfn title="퀘냐: 「반지의 제왕」으로 유명한 J.R.R. 톨킨의 작품에 등장하는 요정어 중 하나">
                     <Link
                       href="https://ko.wikipedia.org/wiki/%EA%BF%B0%EB%83%90"
                       target="blank"
@@ -540,9 +564,22 @@ const TMI = (props) => {
                   </dfn>
                 </strong>
               </Box>
+              <Box component="li">다음 목표: 아랍어, 스페인어 등</Box>
             </Box>
           </Box>
-          <Box component="li">세벌식(3-2015) 자판을 사용합니다.</Box>
+          <Box component="li">
+            헷갈리면 사전을 찾아볼 정도로 맞춤법을 잘 지키려고 합니다.
+          </Box>
+          <Box component="li">
+            <Link
+              href="https://cafe.daum.net/3bulsik/JMKX/34"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+            >
+              세벌식(3-2015)
+            </Link>{' '}
+            자판을 사용합니다.
+          </Box>
           <Box component="li">왼손잡이입니다. 식사는 오른손으로 합니다.</Box>
         </Box>
       </Box>
