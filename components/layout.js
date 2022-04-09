@@ -188,7 +188,7 @@ export default function Layout({ children }) {
           <Toolbar>
             <IconButton
               color="inherit"
-              aria-label="open drawer"
+              aria-label={open ? '사이드바 축소' : '사이드바 확장'}
               onClick={handleDrawerOpen}
               edge="start"
               sx={{
