@@ -56,47 +56,17 @@ const Home = (props) => {
       </Header>
       <Box>
         <Typography paragraph>
-          풀스택도 프론트부터!
-          <br />
-          프론트&백 풀스택 프로그래머를 지망하는 <strong>Vrisel</strong>
+          모두에게 편리한 프로그램을 만들기 위해 노력하는{' '}
+          <strong>브리셀(Vrisel)</strong>
           입니다.
         </Typography>
-        <Box component="ul" className={classes.mbList}>
-          <Typography component="li">
-            <strong>모든 사람이 차별 없이 사람답게</strong> 살 수 있는 세상을
-            꿈꿉니다.
-            <Box component="ul">
-              <Typography component="li">
-                누구에게나 접근성이 좋은 프로그램을 만들기 위해 노력합니다.
-              </Typography>
-            </Box>
-          </Typography>
-          <Typography component="li">
-            새로이 <strong>배우는 것</strong>을 좋아합니다.
-            <Box component="ul">
-              <Typography component="li">
-                하나가 궁금했는데 결국 열 가지를 찾아보는 타입
-              </Typography>
-              <Typography component="li">
-                시간이 조금 걸릴 때도 있지만, 기반이 탄탄할수록 활용성도 커지는
-                것 같습니다.
-              </Typography>
-              <Typography component="li">
-                배움이 지식에서 끝나지 않고 다른 사람들에게 도움이 될 때 기쁨과
-                보람을 느낍니다.
-              </Typography>
-            </Box>
-          </Typography>
-          <Typography component="li">
-            <s>잘 보이시겠지만 디자인 쪽 스탯은 안 찍었습니다.</s>
-          </Typography>
-          <Typography component="li">
-            <q>
-              <dfn title="새 사도신경">
-                나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.
-              </dfn>
-            </q>
-          </Typography>
+        <Box component="ul">
+          <Box component="li">
+            잠깐 사용하더라도 사용자가 불편함을 느끼지 않기를 바랍니다.
+          </Box>
+          <Box component="li">
+            최상의 UX는 아니더라도 최소한의 접근성을 보장하고자 합니다.
+          </Box>
         </Box>
       </Box>
     </Box>
@@ -433,7 +403,7 @@ const TMI = (props) => {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      82;
+      87;
     return duration;
   };
 
@@ -446,6 +416,13 @@ const TMI = (props) => {
       <Box component="details">
         <summary>펼치기/접기</summary>
         <Box component="ul" className={classes.mbList}>
+          <Box component="li">
+            <q>
+              <dfn title="새 사도신경">
+                나는 전능하신 아버지 하나님, 천지의 창조주를 믿습니다.
+              </dfn>
+            </q>
+          </Box>
           <Box component="li">
             <strong>Vrisel</strong>은 silver의{' '}
             <Link
@@ -468,6 +445,9 @@ const TMI = (props) => {
               <strong>에반게리온 초호기</strong>
             </Link>
             입니다.
+          </Box>
+          <Box component="li">
+            <s>잘 보이시겠지만 디자인 쪽 스탯은 안 찍었습니다.</s>
           </Box>
           {/* <Box component="li">
             가볍게 다뤄본 프로그래밍/스크립팅 언어들:
@@ -511,6 +491,22 @@ const TMI = (props) => {
             </Box>
           </Box> */}
           <Box component="li">
+            새로이 <strong>배우는 것</strong>을 좋아합니다.
+            <Box component="ul">
+              <Box component="li">
+                하나가 궁금했는데 결국 열 가지를 찾아보는 타입
+              </Box>
+              <Box component="li">
+                시간이 조금 걸릴 때도 있지만, 기반이 탄탄할수록 지식 활용성도
+                커지는 것 같습니다.
+              </Box>
+              <Box component="li">
+                배움이 지식에서 끝나지 않고 다른 사람들에게 도움이 될 때 기쁨과
+                보람을 느낍니다.
+              </Box>
+            </Box>
+          </Box>
+          <Box component="li">
             프로그래밍 언어 외에도 각종 언어들을 좋아합니다.
             <Box component="ul">
               <Box component="li">
@@ -524,14 +520,14 @@ const TMI = (props) => {
                 {duolingo()}일차
               </Box>
               <Box component="li">
-                일상 대화가 가능한 수준:
+                일상 대화가 가능한 수준:{' '}
                 <strong>
                   <dfn title="영어">English</dfn>,{' '}
                   <dfn title="일본어">日本語</dfn>
                 </strong>
               </Box>
               <Box component="li">
-                기초적인 수준:
+                기초적인 수준:{' '}
                 <strong>
                   <dfn title="독일어">Deutsch</dfn>,{' '}
                   <dfn title="중국어">普通话</dfn>
