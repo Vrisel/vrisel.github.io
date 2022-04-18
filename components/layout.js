@@ -164,18 +164,20 @@ export default function Layout({ children }) {
       .querySelectorAll('section')
       .forEach((sec) => tops.push(sec.offsetTop));
     setSectionTops(tops);
-  }, []);
-  const handleScroll = ({ target }) => {
+  }, [document.querySelector('#__next').clientWidth]);
+
+  const [currY, setCurrY] = useState(0);
+  useEffect(() => {
     let currentIndex = 0;
     for (let i = 0; i < sectionTops.length; i++) {
-      if (target.scrollTop >= sectionTops[i] - sectionTops[0]) {
+      if (currY >= sectionTops[i] - sectionTops[0]) {
         currentIndex = i;
       } else {
         break;
       }
     }
     setSelectedIndex(currentIndex);
-  };
+  }, [currY]);
 
   return (
     <>
@@ -271,7 +273,7 @@ export default function Layout({ children }) {
             width: '100%',
             overflowY: 'auto',
           }}
-          onScroll={(e) => handleScroll(e)}
+          onScroll={(e) => setCurrY(e.target.scrollTop)}
         >
           {children}
           <Box
