@@ -22,6 +22,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import DevIcon from '@mui/icons-material/LogoDev';
 import InventoryIcon from '@mui/icons-material/Inventory';
+import HistoryIcon from '@mui/icons-material/History';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import ArticleIcon from '@mui/icons-material/Article';
 // native
@@ -231,6 +232,7 @@ export default function Layout({ children }) {
                   href: '#projects',
                   icon: <InventoryIcon />,
                 },
+                { text: 'History', href: '#history', icon: <HistoryIcon /> },
                 { text: 'Contacts', href: '#contacts', icon: <ContactsIcon /> },
                 { text: 'TMI', href: '#tmi', icon: <ArticleIcon /> },
               ].map((item, index) => (

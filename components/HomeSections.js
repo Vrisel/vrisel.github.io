@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import DevIcon from '@mui/icons-material/LogoDev';
+import HistoryIcon from '@mui/icons-material/History';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import EMailIcon from '@mui/icons-material/Email';
@@ -19,6 +19,15 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import ArticleIcon from '@mui/icons-material/Article';
 import classes from './HomeSections.module.css';
 import Image from 'next/image';
+import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineOppositeContent,
+} from '@mui/lab';
 
 const TOP_MARGIN = 4;
 const Header = (props) => {
@@ -56,8 +65,8 @@ const Home = (props) => {
       </Header>
       <Box>
         <Typography paragraph>
-          모두에게 편리한 프로그램을 만들기 위해 노력하는{' '}
-          <strong>브리셀(Vrisel)</strong>
+          모두에게 편리한 프로그램을 만들기 위해 노력하는 프론트엔드 주니어,{' '}
+          <strong>임진섭</strong>
           입니다.
         </Typography>
         <Box component="ul">
@@ -73,31 +82,208 @@ const Home = (props) => {
   );
 };
 
-const Skills = (props) => {
+const flexThree = {
+  WebkitFlex: '3',
+  MsFlex: '3',
+  flex: '3',
+};
+const History = (props) => {
   return (
     <Box
       component="section"
       mb={props.mb}
-      aria-labelledby="skills"
+      aria-labelledby="history"
       sx={{ position: 'relative' }}
     >
-      <Header component={props.headerComponent} variant="h5" id="skills">
-        <DevIcon />
-        사용중인 기술
+      <Header component={props.headerComponent} variant="h5" id="history">
+        <HistoryIcon />
+        이력
       </Header>
-      <Box component="dl" className={classes.dataList}>
-        <Typography component="dt">Front-end framework(library):</Typography>
-        <Typography component="dd">Nuxt(Vue.js), NEXT(React)</Typography>
+      <Timeline>
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `21.08 ~ 현재
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot color="primary" />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ ...flexThree }}>
+            <Typography variant="h6" component="h3">
+              실로암시각장애인복지관
+            </Typography>
+            <Box component="ul">
+              <Box component="li">근로지원인</Box>
+              <Box component="li">시각장애인의 업무 보조</Box>
+            </Box>
+          </TimelineContent>
+        </TimelineItem>
 
-        <Typography component="dt">Database:</Typography>
-        <Typography component="dd">SQL(SQL Server, MySQL), MongoDB</Typography>
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `18.12 ~ `20.10
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={flexThree}>
+            <Typography variant="h6" component="h3">
+              바우뫼주간보호센터
+            </Typography>
+            <Box component="ul">
+              <Box component="li">사회복무요원</Box>
+              <Box component="li">발달장애인의 센터 내 생활 보조</Box>
+            </Box>
+          </TimelineContent>
+        </TimelineItem>
 
-        <Typography component="dt">Middleware:</Typography>
-        <Typography component="dd">express</Typography>
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `13.03 ~ `18.12
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={flexThree}>
+            <Typography variant="h6" component="h3">
+              가천대학교 일반대학원
+            </Typography>
+            <Box component="ul">
+              <Box component="li">
+                나노화학과 나노화학 전공 (석·박사통합과정 수료)
+              </Box>
+              <Box component="li">8학기 course work 수료 후 연구 지속</Box>
+              <Box component="li">연구실 내 행정처리 담당 (2013~2018)</Box>
+              <Box component="li">Lab장 (2014~2018)</Box>
+              <Box component="li">
+                학부수업 &quot;유기화학실험&quot; 조교 (2014학년도 1학기)
+              </Box>
+              <Box component="li">
+                보건복지부 및 한국연구재단 지원 과제에 참여
+              </Box>
+              <Box component="li">
+                출간 논문
+                <Box component="ul">
+                  <Box component="li">
+                    <b>RIM, Jinseob</b>; JANG, Chang-Hyun.
+                    <br />
+                    <a
+                      href="https://doi.org/10.1016/j.ab.2018.08.010"
+                      rel="nofollow noopener noreferrer"
+                    >
+                      Detection of catalase activity with aldehyde-doped liquid
+                      crystals confined in microcapillaries.
+                    </a>
+                    <br />
+                    Analytical biochemistry, 2018, 560: 19-23.
+                  </Box>
+                  <Box component="li">
+                    KIM, Hyeong Jin; <b>RIM, Jinseob</b>; JANG, Chang-Hyun.
+                    <br />
+                    <a
+                      href="https://doi.org/10.1021/acsami.7b06189"
+                      rel="nofollow noopener noreferrer"
+                    >
+                      Liquid-crystal-based immunosensor for diagnosis of
+                      tuberculosis in clinical specimens.
+                    </a>
+                    <br />
+                    ACS Applied Materials & Interfaces, 2017, 9.25: 21209-21215.
+                  </Box>
+                  <Box component="li">
+                    <b>RIM, Jinseob</b>; KIM, Hyeong Jin; JANG, Chang-Hyun.
+                    <br />
+                    <a
+                      href="https://doi.org/10.1002/bkcs.10922"
+                      rel="nofollow noopener noreferrer"
+                    >
+                      Parallel Detection of Anti-Tuberculosis Antibodies upon a
+                      Liquid Crystal-based Optical Sensor.
+                    </a>
+                    <br />
+                    Bulletin of the Korean Chemical Society, 2016, 37.10:
+                    1644-1651.
+                  </Box>
+                  <Box component="li">
+                    KIM, Hyeong Jin; <b>RIM, Jinseob</b>; JANG, Chang-Hyun.
+                    <br />
+                    <a
+                      href="https://doi.org/10.1007/s13233-016-4019-3"
+                      rel="nofollow noopener noreferrer"
+                    >
+                      Diagnosis of tuberculosis using a liquid crystal-based
+                      optical sensor.
+                    </a>
+                    <br />
+                    Macromolecular Research, 2016, 24.2: 123-130.
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+          </TimelineContent>
+        </TimelineItem>
 
-        <Typography component="dt">Full-stack:</Typography>
-        <Typography component="dd">C# ASP.NET Framwork</Typography>
-      </Box>
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `09.03 ~ `13.02
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={flexThree}>
+            <Typography variant="h6" component="h3">
+              가천대학교
+            </Typography>
+            <Box component="ul">
+              <Box component="li">
+                바이오나노학부 나노시스템전공 (바이오나노공학사)
+              </Box>
+              <Box component="li">
+                <s>최초합격 장학생 (1년)</s>
+              </Box>
+              <Box component="li">2011년 08월부터 연구실 생활 시작</Box>
+              <Box component="li">
+                <s>과 수석 졸업 (2명 중 1등)</s>
+              </Box>
+            </Box>
+          </TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `06.03 ~ `09.02
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={flexThree}>
+            <Typography variant="h6" component="h3">
+              서울 중앙고등학교
+            </Typography>
+            <Box component="ul">
+              <Box component="li">100회 졸업생</Box>
+            </Box>
+          </TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineOppositeContent color="text.secondary">
+            `91.07.17
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot color="warning" />
+          </TimelineSeparator>
+          <TimelineContent sx={flexThree}>
+            <Typography variant="h6" component="h3">
+              서울 출생
+            </Typography>
+          </TimelineContent>
+        </TimelineItem>
+      </Timeline>
     </Box>
   );
 };
@@ -403,7 +589,7 @@ const TMI = (props) => {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      87;
+      88;
     return duration;
   };
 
@@ -424,7 +610,7 @@ const TMI = (props) => {
             </q>
           </Box>
           <Box component="li">
-            <strong>Vrisel</strong>은 silver의{' '}
+            <strong>Vrisel</strong>이란 닉네임은 silver의{' '}
             <Link
               href="https://ko.wikipedia.org/wiki/%EC%96%B4%EA%B5%AC%EC%A0%84%EC%B2%A0"
               target="_blank"
@@ -583,4 +769,4 @@ const TMI = (props) => {
   );
 };
 
-export { Home, Skills, Projects, Contacts, TMI };
+export { Home, History, Projects, Contacts, TMI };

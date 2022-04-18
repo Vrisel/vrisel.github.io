@@ -12,8 +12,8 @@ export default function Home() {
       </Head>
       <Container sx={{ width: '99%' }}>
         <Sections.Home mb={7} headerComponent="h2" />
-        {/* <Sections.Skills mb={7} headerComponent="h2" /> */}
         <Sections.Projects mb={7} headerComponent="h2" />
+        <Sections.History mb={7} headerComponent="h2" />
         <Sections.Contacts mb={7} headerComponent="h2" />
         <Sections.TMI mb={7} headerComponent="h2" />
       </Container>
