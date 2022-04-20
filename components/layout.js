@@ -157,6 +157,22 @@ export default function Layout({ children }) {
   };
 
   const [sectionTops, setSectionTops] = useState([]);
+  /* useEffect(() => {
+    const handleResize = () => {
+      const container = document.querySelector('main');
+      let tops = [];
+      container
+        .querySelectorAll('section')
+        .forEach((sec) => tops.push(sec.offsetTop));
+      setSectionTops(tops);
+      console.log(sectionTops);
+    };
+    window.addEventListener('resize', handleResize);
+    return function cleanup() {
+      window.removeEventListener('resize', handleResize);
+    };
+  }); */
+
   useEffect(() => {
     const container = document.querySelector('main');
     let tops = [];
@@ -164,7 +180,8 @@ export default function Layout({ children }) {
       .querySelectorAll('section')
       .forEach((sec) => tops.push(sec.offsetTop));
     setSectionTops(tops);
-  }, [document.querySelector('#__next').clientWidth]);
+    console.log(tops);
+  }, [selectedIndex]);
 
   const [currY, setCurrY] = useState(0);
   useEffect(() => {
@@ -273,7 +290,7 @@ export default function Layout({ children }) {
             width: '100%',
             overflowY: 'auto',
           }}
-          onScroll={(e) => setCurrY(e.target.scrollTop)}
+          onScroll={({ target }) => setCurrY(target.scrollTop)}
         >
           {children}
           <Box
