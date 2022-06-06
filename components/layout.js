@@ -180,7 +180,6 @@ export default function Layout({ children }) {
       .querySelectorAll('section')
       .forEach((sec) => tops.push(sec.offsetTop));
     setSectionTops(tops);
-    console.log(tops);
   }, [selectedIndex]);
 
   const [currY, setCurrY] = useState(0);
