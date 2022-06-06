@@ -589,7 +589,7 @@ const TMI = (props) => {
     const startDay = new Date(2020, 8 - 1, 14);
     const duration =
       Math.ceil((today.getTime() - startDay.getTime()) / 1000 / 60 / 60 / 24) -
-      88;
+      96;
     return duration;
   };
 
@@ -701,7 +701,7 @@ const TMI = (props) => {
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 >
-                  듀오링고
+                  듀오링고 약
                 </Link>{' '}
                 {duolingo()}일차
               </Box>
@@ -750,7 +750,11 @@ const TMI = (props) => {
             </Box>
           </Box>
           <Box component="li">
-            헷갈리면 사전을 찾아볼 정도로 맞춤법을 잘 지키려고 합니다.
+            2010년부터 2018년까지 교회 방송실에서 자막을 담당했었습니다. 덕분에
+            맞춤법에 신경쓰는 습관이 더욱 커졌습니다.
+          </Box>
+          <Box component="li">
+            2019년부터는 교회 방송실에서 음향을 담당하고 있습니다.
           </Box>
           <Box component="li">
             <Link
